@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nodules</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		function loadImage()
+		{
+			var loc = window.location.href;
+			loc = loc.replace("detectNodules/", "")
+
+			var imgs = document.getElementsByTagName("img");
+			for(var i = 0; i < imgs.length; i++)
+			{
+				imgs[i].src = loc + imgs[i].id + '/' + 'getImage';
+			}
+		}
+
+		function predict()
+		{
+			$('#predictbtn').val("Predicting...");
+			anchor = document.getElementById('anchor');
+			var loc = window.location.href;
+			loc = loc.replace("detectNodules/", "cancerPredict/");
+			anchor.href =loc;
+			anchor.click();
+		}
+	</script>
+</head>
+<body onload = "loadImage()" style="text-align: center;background-color: rgba(149, 170, 193, 0.25);">
+{% for filename in filenames %}
+	<img id = "{{ filename }}" width = "150px" height="150px"></img>
+{% endfor %}
+<br><br>
+<a href="#" id="anchor"><input type="button" value="Predict" id="predictbtn" onclick="predict()" class="btn btn-info"></a>
+</body>
+</html>
