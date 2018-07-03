@@ -10,7 +10,7 @@ Boost lung Cancer Detection using Generative model and Semi-Supervised Learning
 
 ## Architecture
 
-<img src="image/Architecture.PNG" width="650" height="320" />
+<img src="images/Architecture.PNG" width="650" height="320" />
 
 
 # Contributors:
