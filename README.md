@@ -21,15 +21,16 @@ Boost lung Cancer Detection using Generative model and Semi-Supervised Learning
 
 ### Generator Results
 
-<img src="images/GeneratedNodules.PNG" width="700" height="220" />
+<img src="images/GeneratedNodules.PNG" width="700" height="150" />
 
 
 ### Classifier Results
 
-| Method                        | Accuracy      |
-| ----------------------------- |:-------------:|
-| **Supervised Learning**       | 64 %          |
-| **Semi-Supervised Learning**  | 87.3 %        |
+| Method                        | Accuracy          |
+| ----------------------------- |:-----------------:|
+| **Supervised Learning**       | 64 %              |
+| **Semi-Supervised Learning**  | **87.3 %**        |
+
 
 
 ## Resources
